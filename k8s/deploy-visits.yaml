@@ -14,7 +14,7 @@ spec:
         tier: visits
     spec:
       containers:
-        - image: hongjs/spring-petclinic-visits-service:latest
+        - image: hongjs/spring-petclinic-visits-service:v1
           imagePullPolicy: Always
           name: visits
           ports:
