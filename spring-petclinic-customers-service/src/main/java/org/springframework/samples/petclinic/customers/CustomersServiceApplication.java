@@ -20,6 +20,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.context.annotation.Import;
 import org.springframework.samples.petclinic.monitoring.MonitoringConfig;
+import org.springframework.context.annotation.Bean;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * @author Maciej Szarlinski
@@ -32,4 +34,10 @@ public class CustomersServiceApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(CustomersServiceApplication.class, args);
 	}
+
+	@Bean
+    // @LoadBalanced
+    RestTemplate loadBalancedRestTemplate() {
+        return new RestTemplate();
+    }
 }
